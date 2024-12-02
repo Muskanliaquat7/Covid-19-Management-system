@@ -1,10 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Appointment</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <div class="form-container">
@@ -28,6 +37,26 @@
             <div class="input-group">
                 <label for="appointment_date">Appointment Date:</label>
                 <input type="date" id="appointment_date" name="appointment_date" required>
+            </div>
+
+            <div class="input-group">
+                <label for="age">Allergy:</label>
+                <input type="number" id="allergy" name="allergy" >
+            </div>
+
+            <div class="input-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div class="input-group">
+                <label for="vaccine">Vaccination Name:</label>
+                <select id="vaccine" name="vaccine" required>
+                    <option value="">Select Vaccine</option>
+                    <option value="covishield">Covishield</option>
+                    <option value="covaxin">Covaxin</option>
+                    <option value="sputnik">Sputnik V</option>
+                </select>
             </div>
 
             <button type="submit" class="submit-btn">Book Appointment</button>
@@ -54,11 +83,14 @@
             $contact = $_POST['contact'];
             $hospital_name = $_POST['hospital_name'];
             $appointment_date = $_POST['appointment_date'];
+            $age = $_POST['allergy'];
+            $dob = $_POST['dob'];
+            $vaccine = $_POST['vaccine'];
 
             // Insert appointment details into database
-            $sql = "INSERT INTO appointments (patient_name, contact, hospital_name, appointment_date, status) VALUES (?, ?, ?, ?, 'Pending')";
+            $sql = "INSERT INTO appointments (patient_name, contact, hospital_name, appointment_date,  dob, vaccine, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'Pending')";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssss", $patient_name, $contact, $hospital_name, $appointment_date);
+            $stmt->bind_param("ssssiss", $patient_name, $contact, $hospital_name, $appointment_date, $dob, $vaccine);
 
             if ($stmt->execute()) {
                 echo "<p class='success-message'>Your appointment has been booked successfully! Please wait for approval.</p>";
