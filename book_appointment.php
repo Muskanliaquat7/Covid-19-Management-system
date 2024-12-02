@@ -41,7 +41,7 @@
 
             <div class="input-group">
                 <label for="age">Allergy:</label>
-                <input type="number" id="allergy" name="allergy" >
+                <input type="text" id="allergy" name="allergy" >
             </div>
 
             <div class="input-group">
@@ -77,15 +77,15 @@
             $vaccine = $_POST['vaccine'];
 
             // Insert appointment details into database
-            $sql = "INSERT INTO appointments (patient_name, contact, hospital_name, appointment_date,  dob, vaccine, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'Pending')";
+            $sql = "INSERT INTO appointments (patient_name, contact, hospital_name, appointment_date,allergy,  dob, vaccine, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'Pending')";
             $stmt = $conn->prepare($sql);
-            $stmt->bind_param("ssssiss", $patient_name, $contact, $hospital_name, $appointment_date, $dob, $vaccine);
+            $stmt->bind_param("ssssiss", $patient_name, $contact, $hospital_name, $appointment_date, $allergy, $dob, $vaccine);
 
-            if ($stmt->execute()) {
-                echo "<p class='success-message'>Your appointment has been booked successfully! Please wait for approval.</p>";
-            } else {
-                echo "<p class='error-message'>Error: " . $stmt->error . "</p>";
-            }
+            // if ($stmt->execute()) {
+            //     echo "<p class='success-message'>Your appointment has been booked successfully! Please wait for approval.</p>";
+            // } else {
+            //     echo "<p class='error-message'>Error: " . $stmt->error . "</p>";
+            // }
 
             // Close connection
             $stmt->close();
