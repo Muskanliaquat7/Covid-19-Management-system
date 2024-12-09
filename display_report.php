@@ -1,17 +1,6 @@
 <?php
-// Database configuration
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "covid_hospital_search";
+include('db.php');
 
-// Create a connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 // Default query to show all reports
 $query = "SELECT * FROM reports";
@@ -34,6 +23,8 @@ $result = $conn->query($query);
     <title>COVID-19 Test Reports</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  
+    <link rel="stylesheet" href="responsive-sidebar-dark-light-main\assets\css\styles.css">
     <style>/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
@@ -44,15 +35,18 @@ body {
     align-items: center;
     padding: 20px;
     min-height: 100vh;
+    
 }
 
 .container {
-    max-width: 900px;
+    max-width: 800px;
     width: 100%;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
+    margin-left: 160px;
+
 }
 
 /* Header */
@@ -68,6 +62,7 @@ h1 {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    margin-left: 60px;
 }
 
 .search-form input {
@@ -86,6 +81,7 @@ h1 {
     border-radius: 0 8px 8px 0;
     cursor: pointer;
     font-weight: bold;
+  
     transition: 0.3s;
 }
 
@@ -143,7 +139,9 @@ h1 {
 </style>
 </head>
 <body>
-
+<?php 
+    include('responsive-sidebar-dark-light-main\index.html');
+    ?>
 <div class="container">
     <h1>COVID-19 Test Reports</h1>
     
@@ -182,7 +180,7 @@ h1 {
         <?php endif; ?>
     </div>
 </div>
-
+<script src="responsive-sidebar-dark-light-main\assets\js\main.js"></script>
 <?php $conn->close(); ?>
 
 <script>
@@ -201,5 +199,11 @@ h1 {
         doc.save(`${rowData.patient_name}_report.pdf`);
     }
 </script>
+
+
+
+
+ 
+
 </body>
 </html>

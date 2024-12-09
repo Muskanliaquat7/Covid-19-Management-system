@@ -43,7 +43,11 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title><style>
+    <title>Document</title>
+    <link rel="stylesheet" href="responsive-sidebar-dark-light-main\assets\css\styles.css">
+    
+    <style>
+
         /* General Styling */
 body {
     font-family: 'Poppins', Arial, sans-serif;
@@ -119,6 +123,8 @@ body {
     </style>
 </head>
 <body>
-    
+<?php 
+    include('responsive-sidebar-dark-light-main\index.html');
+    ?>
 </body>
 </html>

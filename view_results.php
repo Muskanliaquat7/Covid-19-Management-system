@@ -27,24 +27,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View COVID-19 Results</title>
+    <link rel="stylesheet" href="responsive-sidebar-dark-light-main\assets\css\styles.css">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
+      
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: #fff;
+            background: transparent;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: gray;
         }
         form {
             display: flex;
@@ -56,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-        button {
+        button1 {
             padding: 10px;
             background-color: #007BFF;
             color: white;
@@ -64,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-radius: 5px;
             cursor: pointer;
         }
-        button:hover {
+        button1:hover {
             background-color: #0056b3;
         }
         .results {
@@ -85,11 +82,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
+    <?php 
+    include('responsive-sidebar-dark-light-main\index.html');
+    ?>
+
     <div class="container">
         <h1>View COVID-19 Test Results</h1>
         <form method="POST">
             <input type="text" name="patient_name" placeholder="Enter your name" value="<?= htmlspecialchars($patient_name) ?>" required>
-            <button type="submit">View Results</button>
+            <button class="button1" type="submit">View Results</button>
         </form>
         
         <?php if ($results): ?>
@@ -105,5 +106,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         <?php endif; ?>
     </div>
+    <script src="responsive-sidebar-dark-light-main\assets\js\main.js"></script>
 </body>
 </html>

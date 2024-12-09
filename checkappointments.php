@@ -21,6 +21,8 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Appointment</title>
+    <link rel="stylesheet" href="responsive-sidebar-dark-light-main\assets\css\styles.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -95,5 +97,7 @@ $conn->close();
             </tbody>
         </table>
     </div>
+    <script src="responsive-sidebar-dark-light-main\assets\js\main.js"></script>
+
 </body>
 </html>

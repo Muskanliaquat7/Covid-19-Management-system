@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Appointment</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="responsive-sidebar-dark-light-main\assets\css\styles.css">
+    
     <style>
         select {
             width: 100%;
@@ -16,6 +18,9 @@
     </style>
 </head>
 <body>
+<?php 
+    include('responsive-sidebar-dark-light-main\index.html');
+    ?>
     <div class="form-container">
         <h2>Book Your Appointment</h2>
         <form method="POST" action="">
@@ -93,5 +98,7 @@
         }
         ?>
     </div>
+    <script src="responsive-sidebar-dark-light-main\assets\js\main.js"></script>
+
 </body>
 </html>

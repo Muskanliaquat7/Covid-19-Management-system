@@ -1,7 +1,7 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 50px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
@@ -9,17 +9,22 @@
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    padding: 20px;
+    padding: 60px;
+}
+form {
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .form-container {
     max-width: 500px;
     margin: 0 auto;
     background-color: white;
-    padding: 30px;
+    padding: 60px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    /* z-index: ; */
 }
 
 h2 {
