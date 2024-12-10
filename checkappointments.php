@@ -98,6 +98,5 @@ $conn->close();
         </table>
     </div>
     <script src="responsive-sidebar-dark-light-main\assets\js\main.js"></script>
-
 </body>
 </html>
