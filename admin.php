@@ -6,12 +6,7 @@
     <title>Admin Panel - Manage Requests</title>
     <link rel="stylesheet" href="styles.css">
     <style>/* General Reset */
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 /* Body and Layout */
 body {
