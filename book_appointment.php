@@ -6,7 +6,6 @@
     <title>Book Appointment</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="responsive-sidebar-dark-light-main\assets\css\styles.css">
-    
     <style>
         select {
             width: 100%;
