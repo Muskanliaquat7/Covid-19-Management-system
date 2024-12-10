@@ -1,7 +1,5 @@
 <?php
 include('db.php');
-
-
 // Default query to show all reports
 $query = "SELECT * FROM reports";
 
